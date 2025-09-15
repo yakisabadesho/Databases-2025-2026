@@ -34,3 +34,4 @@ Department - No foreign keys
 Enrollment - StudentID (from Student), CourseID (from Course)
 
 
+ATTENTION: THERE'S NO PART 3 IN THE LabWork1 PDF SO I DONT HAVE PART 3 IN THIS FOLDER ! ! !
