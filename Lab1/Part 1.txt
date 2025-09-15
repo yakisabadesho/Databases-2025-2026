@@ -1,0 +1,36 @@
+Part 1
+
+Task 1.1)
+A)
+1.Superkeys: 
+EmpID - SSN
+EmpID - Email
+EmpID - SSN - Email
+EmpID - Phone
+EmpID - Name
+EmpID - Phone - Name
+
+2.Candidate keys:
+SSN, Phone, SSN, EmpID
+
+3.EmpID, since it's always unique, never null
+
+4.No
+
+5.They shouldn't, ultimately it depends on the company policy. 
+I personally think it would thwart the workflow in the company.
+Database-wise "Phone" is a candidate key, thus it cant be duplicated
+
+B)
+1.One attribute, StudentID
+2.StudentID is unique and never null, belongs to each individual student
+3.No other candidate key
+
+Task 1.2) 
+Student - No foreign keys
+Professor - No foreign keys
+Course - No foreign keys
+Department - No foreign keys 
+Enrollment - StudentID (from Student), CourseID (from Course)
+
+
