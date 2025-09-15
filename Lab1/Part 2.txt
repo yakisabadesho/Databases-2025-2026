@@ -1,0 +1,30 @@
+Part 2
+
+Task 2.1)
+1.Strong - Patients, Doctors, Departments
+Weak - Appointments, Prescriptions, HospitalRooms
+
+2. Simple attributes are not noted for convenience
+Patients:PatientID(Unique),Name,Birthdate,Address(Composite),Insurance,Phone(Multivalued)
+Doctors:DoctorID(Unique),Name,OfficeLocation,Phone,Specializationn(Multivalued)
+Departments:DeptCode(Unique),DeptName(Unique),DeptLocation
+HospitalRooms:RoomNumber,DoctorID(Foreign Key), DeptCode(ForeignKey)
+Appointments:PatientID(Foreign Key),DoctorID(ForeignKey),Purpose,Time,Notes,Date
+Prescriptions:PatientID(Foreign Key),DoctorID(Foreign Key),Dosage,Instructions,Prescription(Multivalued)
+
+3.Patients-Appointments,Patients-Descriptions(1:N)
+Doctors-Appointments,Doctors-Prescriptions,Doctors-HospitalRooms(1:N)
+Departments-HospitalRooms(1:1)
+
+4.Image embed
+
+5.Primary Keys:
+Patients - PatientID
+Doctors - DoctorID
+Departments - DeptCode
+
+Task 2.2)
+
+1.Image embed
+2.Inventory is a weak entity, since it doesnt have a primary key and depends both on Orders and Products
+3.Product-Inventory-Orders chain is a M:N relationship
