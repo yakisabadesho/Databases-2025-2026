@@ -1,0 +1,63 @@
+Part 4
+Task 4.1)
+1.
+StudentID -> StudentName
+StudentID -> StudentMajor
+ProjectID -> ProjectTitle
+ProjectID -> ProjectType
+SupervisorID -> SupervisorName
+SupervisorID -> SupervisorDept
+StudentID -> Role
+StudentID -> HoursWorked
+ProjectID -> StartDate
+ProjectID -> EndDate
+2.
+Redundancies could be ProjectID, ProjectType, ProjectTitle, SupervisorID, SupervisorName, SupervisorDept
+since they all will show up repeatedly on every StudentID row.
+
+Update anomaly:You would have to change EndDate or StartDate on every row instead of one since the table is denormalized,
+which is computationally costly
+
+Insert anomaly:You wouldnt be able to insert a student into the table if they're not a part of any project yet
+
+Delete anomaly: If you delete a student who was the only member of a project in the table, you would delete the project itself
+
+3.If any single column is multivalued it could violate the 1NF, also if a project has multiple supervisors
+and they're put in a list in a single cell that would also be a violation. I would fix it by normalizing the table
+and creating new joint tables
+
+
+4.Primary key: StudentID, ProjectID
+
+Partial dependencies: 
+StudentID -> StudentName
+StudentID -> StudentMajor
+ProjectID -> ProjectTitle
+ProjectID -> ProjectType
+ProjectID -> SupervisorID
+ProjectID -> StartDate
+ProjectID -> EndDate
+
+5. Primary key: StudentID,ProjectID
+Partial dependencies: See above
+Remove partial dependencies by dividing the table into a bunch of smaller ones:
+Students: StudentID,StudentName,StudentMajor,Role,HoursWorked
+Projects:ProjectID,ProjectTitle,ProjectType,StartDate,EndDate
+Supervisors:SupervisorID,SupervisorName,SupervisorDept
+
+Task 4.2)
+
+1.Primary key: TimeSlot
+2.TimeSlot -> Building, Room, StudentID, InstructorID, CourseID
+StudentID -> StudentMajor
+InstructorID -> InstructorName
+CourseID -> CourseName
+3.Not in BCNF since for every functional dependency A -> B, A is not a superkey
+4.Decompose into BCNF by dividing the table into separate tables similarly to previous task
+
+Students(StudentID (PrimaryKey), StudentMajor)
+Courses(CourseID (PrimaryKey), CourseName)
+Instructors(InstructorID (PrimaryKey), InstructorName)
+TimeSlot(Room,Building,CourseID,StudentID)
+
+5.I dont think we lost anything here
