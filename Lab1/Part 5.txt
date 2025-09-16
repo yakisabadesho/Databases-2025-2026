@@ -1,0 +1,9 @@
+Part 5
+
+Task 5.1)
+1.Image Embed
+2.Image Embed
+3.I could have had Budget be a sub entity of Clubs, but I decided on making a separate entity for convenience
+4.Show me how much the Drama Club spent on the performance on february second.
+What position is Mark on in the Carpentry Club?
+Where and when will the SD club hold their meeting?
